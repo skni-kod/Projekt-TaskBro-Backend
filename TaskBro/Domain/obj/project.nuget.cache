@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "y7qfNPzMg79NaJMC2OVrI71dNNRbtYDMvS+hrxGAcCvSzW6sKtRk9zVFgywRgMDV6Ibvltl6+ueHmensLYAgpw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jcob\\Desktop\\Projekt-TaskBro-Backend\\TaskBro\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.1\\microsoft.netcore.app.ref.8.0.1.nupkg.sha512",
+    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.1\\microsoft.windowsdesktop.app.ref.8.0.1.nupkg.sha512",
+    "C:\\Users\\Jcob\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.1\\microsoft.aspnetcore.app.ref.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

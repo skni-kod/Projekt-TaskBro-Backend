@@ -34,7 +34,7 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
         var errorMessages = new List<string>();
         foreach (var error in validation.Errors)
         {
-            errorMessages.Add($"{error.PropertyName}: {error.ErrorMessage}");
+            errorMessages.Add($"{error.ErrorMessage}, ");
         }
         var errorMessage = string.Join(", ", errorMessages);
         throw new BadRequestException(errorMessage);

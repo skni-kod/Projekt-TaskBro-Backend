@@ -1,4 +1,5 @@
 using System.Security.Authentication;
+using Api.Extensions;
 using Application;
 using Infrastructure;
 using Microsoft.OpenApi.Models;
@@ -74,5 +75,8 @@ var app = builder.Build();
     app.UseHttpsRedirection();
     app.UseAuthorization();
     app.MapControllers();
+
+    app.AddGlobalErrorHandler();
+    
     app.Run();
 }

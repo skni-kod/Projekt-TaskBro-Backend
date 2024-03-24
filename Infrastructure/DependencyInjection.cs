@@ -2,6 +2,7 @@ using System.Reflection.Metadata;
 using Application.Persistance.Interfaces.AccountInterfaces;
 using Infrastructure.Persistance;
 using Infrastructure.Persistance.Repositories.AccountRepositories;
+using Infrastructure.Persistance.Seeders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +14,7 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
         services.AddScoped<IAccountRepository, AccountRepository>();
+        services.AddScoped<Seeder>();
         
         return services;
     }

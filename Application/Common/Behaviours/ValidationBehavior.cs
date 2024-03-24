@@ -11,7 +11,6 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
     where TRequest : IRequest<TResponse>
 {
     private readonly IValidator<TRequest> _validator;
-    private List<ValidationFailure> _errors;
 
     public ValidationBehavior(IValidator<TRequest> validator)
     {
@@ -39,18 +38,5 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
         }
         var errorMessage = string.Join(", ", errorMessages);
         throw new BadRequestException(errorMessage);
-    }
-    
-    private List<ValidationFailure> Errors {
-        get => _errors;
-        set {
-            if (value == null) {
-                throw new ArgumentNullException(nameof(value));
-            }
-
-            // Ensure any nulls are removed and the list is copied
-            // to be consistent with the constructor below.
-            _errors = value.Where(failure => failure != null).ToList();;
-        }
     }
 }

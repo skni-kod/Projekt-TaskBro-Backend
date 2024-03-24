@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7XaE2t7Uzd6Z5OJv8o3tvo6Zq0zSRYaWzBTZ9eQu0NBwAGM8AQvoBLXgJvFpU3YAMDEyGqc4Qa47/YJgQ4OCkg==",
+  "dgSpecHash": "8NQmy9qMEFJkaj7W6jbfERHtusgPOQ8L45PMHP47cOcTZyVFmgipYRSQg5sRPb52HEJD0M0j9kXluc1HC8iU1A==",
   "success": true,
   "projectFilePath": "C:\\Users\\jakub\\Desktop\\Projekt-TaskBro-Backend\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\jakub\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\jakub\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\jakub\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\jakub\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

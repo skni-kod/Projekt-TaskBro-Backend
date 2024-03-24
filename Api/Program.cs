@@ -60,7 +60,8 @@ if (builder.Environment.IsDevelopment())
 builder.Services
     .AddApplication()
     .AddPresentation()
-    .AddInfrastructure(builder.Configuration);
+    .AddInfrastructure()
+    .AddDatabaseConntection(builder.Configuration);
 
 var app = builder.Build();
 {

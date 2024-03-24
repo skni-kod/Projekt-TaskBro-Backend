@@ -45,6 +45,12 @@ public class GlobalExceptionHandlingMiddleware
             status = HttpStatusCode.BadRequest;
             stackTrace = e.StackTrace;
         }
+        else if (exceptionType.Name == nameof(Conflict))
+        {
+            message = e.Message;
+            status = HttpStatusCode.Conflict;
+            stackTrace = e.StackTrace;
+        }
         else
         {
             message = e.Message;

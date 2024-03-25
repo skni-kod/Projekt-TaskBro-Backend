@@ -1,4 +1,5 @@
 using Application.Account.Commands.CreateAccount;
+using Application.Account.Commands.Login;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers.Areas.Auth;
@@ -19,5 +20,12 @@ public class AccountController : BaseController
 
         return Ok(result);
     }
-    //s
+
+    [HttpPost("/login")]
+    public async Task<IActionResult> Login([FromBody] LoginCommand command, CancellationToken cancellationToken)
+    {
+        var result = await Mediator.Send(command, cancellationToken);
+
+        return Ok(result);
+    }
 }

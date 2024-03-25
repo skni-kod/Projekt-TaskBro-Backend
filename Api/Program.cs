@@ -61,6 +61,7 @@ builder.Services
     .AddApplication()
     .AddPresentation()
     .AddInfrastructure()
+    .AddAuthorization(builder.Configuration)
     .AddDatabaseConntection(builder.Configuration);
 
 var app = builder.Build();
@@ -75,9 +76,8 @@ var app = builder.Build();
     
     app.UseHttpsRedirection();
     app.UseAuthorization();
+    app.ApplyPendingMigrations();
     app.MapControllers();
-
     app.AddGlobalErrorHandler();
-    
     app.Run();
 }

@@ -1,3 +1,4 @@
+using Application.Account.DTOs;
 using Application.Persistance.Interfaces.AccountInterfaces;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -25,5 +26,18 @@ public class AccountRepository : IAccountRepository
         await _context.SaveChangesAsync(cancellationToken);
 
         return user.Id;
+    }
+
+    public async Task<User> SignIn(string email, string password, CancellationToken cancellationToken)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == email, cancellationToken);
+
+        if (user is null) return null;
+
+        var passwordVerification = BCrypt.Net.BCrypt.Verify(password, user.Password);
+
+        if (!passwordVerification) return null;
+
+        return user;
     }
 }

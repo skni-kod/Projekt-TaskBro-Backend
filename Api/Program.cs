@@ -43,6 +43,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 }
 
+builder.Services.AddCors(opt => 
+{
+    opt.AddDefaultPolicy(pol =>
+    {
+        pol.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+}); 
+
 if (builder.Environment.IsDevelopment())
 {
     builder.WebHost.ConfigureKestrel(serverOptions =>

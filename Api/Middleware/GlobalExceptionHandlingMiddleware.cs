@@ -45,10 +45,16 @@ public class GlobalExceptionHandlingMiddleware
             status = HttpStatusCode.BadRequest;
             stackTrace = e.StackTrace;
         }
-        else if (exceptionType.Name == nameof(Conflict))
+        else if (exceptionType.Name == nameof(ConflictException))
         {
             message = e.Message;
             status = HttpStatusCode.Conflict;
+            stackTrace = e.StackTrace;
+        }
+        else if (exceptionType.Name == nameof(UnauthorizedException))
+        {
+            message = e.Message;
+            status = HttpStatusCode.Unauthorized;
             stackTrace = e.StackTrace;
         }
         else

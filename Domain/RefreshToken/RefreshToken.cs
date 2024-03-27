@@ -1,4 +1,4 @@
-namespace Application.Account.DTOs;
+namespace Domain.RefreshToken;
 
 public class RefreshToken
 {

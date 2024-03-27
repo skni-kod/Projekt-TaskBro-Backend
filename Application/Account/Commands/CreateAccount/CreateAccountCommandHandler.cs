@@ -19,7 +19,7 @@ public class CreateAccountCommandHandler : IRequestHandler<CreateAccountCommand,
     {
         var isEmailExist = await _accountRepository.IsEmailExist(request.Email, cancellationToken);
 
-        if (isEmailExist) throw new Conflict("E-mail jest zajęty!");
+        if (isEmailExist) throw new ConflictException("E-mail jest zajęty!");
 
         var newUser = new User(request.Name, request.Surname, request.Email, request.Password);
 

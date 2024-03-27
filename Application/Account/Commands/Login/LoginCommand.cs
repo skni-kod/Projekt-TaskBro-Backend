@@ -1,4 +1,3 @@
-using Application.Account.DTOs;
 using Application.Contracts.Account;
 using MediatR;
 

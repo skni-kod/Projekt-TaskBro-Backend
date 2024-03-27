@@ -1,6 +1,8 @@
 using System.Reflection.Metadata;
 using System.Text;
+using Application.Account.Commands.RefreshToken;
 using Application.Persistance.Interfaces.AccountInterfaces;
+using FluentValidation;
 using Infrastructure.Authentication;
 using Infrastructure.Persistance;
 using Infrastructure.Persistance.Repositories.AccountRepositories;
@@ -19,7 +21,8 @@ public static class DependencyInjection
     {
         services.AddScoped<IAccountRepository, AccountRepository>();
         services.AddScoped<Seeder>();
-        services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+        services.AddHttpContextAccessor();
+        services.AddValidatorsFromAssemblyContaining<RefreshTokenCommand>();
         
         return services;
     }

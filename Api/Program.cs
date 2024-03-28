@@ -1,4 +1,5 @@
 using System.Security.Authentication;
+using Api.Extensions;
 using Application;
 using Infrastructure;
 using Microsoft.OpenApi.Models;
@@ -42,6 +43,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 }
 
+builder.Services.AddCors(opt => 
+{
+    opt.AddDefaultPolicy(pol =>
+    {
+        pol.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+}); 
+
 if (builder.Environment.IsDevelopment())
 {
     builder.WebHost.ConfigureKestrel(serverOptions =>
@@ -59,7 +70,9 @@ if (builder.Environment.IsDevelopment())
 builder.Services
     .AddApplication()
     .AddPresentation()
-    .AddInfrastructure(builder.Configuration);
+    .AddInfrastructure()
+    .AddAuthorization(builder.Configuration)
+    .AddDatabaseConntection(builder.Configuration);
 
 var app = builder.Build();
 {
@@ -70,9 +83,11 @@ var app = builder.Build();
         app.UseSwaggerUI();
     }
 
-    
+    app.UseCors();
     app.UseHttpsRedirection();
     app.UseAuthorization();
+    app.ApplyPendingMigrations();
     app.MapControllers();
+    app.AddGlobalErrorHandler();
     app.Run();
 }

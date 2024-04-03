@@ -6,12 +6,12 @@ namespace Infrastructure;
 
 public static class AutomaticMigrations
 {
-    public static void ApplyPendingMigrations(this IApplicationBuilder app)
+    public static async Task ApplyPendingMigrations(this IApplicationBuilder app)
     {
         using (var scope = app.ApplicationServices.CreateScope())
         {
             var seeder = scope.ServiceProvider.GetRequiredService<Seeder>();
-            seeder.ApplyPendingMigrations();
+            await seeder.ApplyPendingMigrations();
         }
     }
 }

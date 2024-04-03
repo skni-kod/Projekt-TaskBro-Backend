@@ -11,14 +11,14 @@ public class Seeder
         _dbContext = dbContext;
     }
 
-    public void ApplyPendingMigrations()
+    public async Task ApplyPendingMigrations()
     {
-        if (_dbContext.Database.CanConnect() && _dbContext.Database.IsRelational())
+        if (await _dbContext.Database.CanConnectAsync() && _dbContext.Database.IsRelational())
         {
-            var pendingMigrations = _dbContext.Database.GetPendingMigrations();
+            var pendingMigrations = await _dbContext.Database.GetPendingMigrationsAsync();
             if (pendingMigrations != null && pendingMigrations.Any())
             {
-                _dbContext.Database.Migrate();
+                await _dbContext.Database.MigrateAsync();
             }
         }
     }

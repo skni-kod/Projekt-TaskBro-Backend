@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yclsE6R43zkd/YoXOvms2rdR+21CWV3H9ukFDCmSTzC+aKy08ShvMQNdEItNjhgrQvc9R1DjFzgOfTdCq1VtFA==",
+  "dgSpecHash": "2+F4f23F60Rt0o5D7uL/MPfOZxNnO4n2aDICLbglks3VAe178nffyCzmiN2auGN9DrVa2wTMQ1w7wKt6/NKSCw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jakub\\Desktop\\Projekt-TaskBro-Backend\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\jakub\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\jakub\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
-    "C:\\Users\\jakub\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\sebcw\\Documents\\GitHub\\Task\\Projekt-TaskBro-Backend\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

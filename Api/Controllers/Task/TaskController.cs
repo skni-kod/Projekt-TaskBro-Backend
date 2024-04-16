@@ -7,9 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace Api.Controllers.Task;
 
 [Route("task")]
+[Authorize]
 public class TaskController: BaseController
 {
-    [HttpPost]
+    [HttpPost("/SetTask")]
     public async Task<IActionResult> SetTask([FromBody] AddTaskCommand command,CancellationToken cancellationToken)
     {
         var result = await Mediator.Send(command, cancellationToken);
@@ -17,7 +18,7 @@ public class TaskController: BaseController
         return Ok(result);
     }
 
-    [HttpGet]
+    [HttpGet("/GetTasks")]
     public async Task<IActionResult> GetTasks( CancellationToken cancellationToken)
 
     {

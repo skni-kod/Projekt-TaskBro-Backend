@@ -4,7 +4,6 @@ using MediatR;
 namespace Application.DailyTask.Commands;
 
 public record AddTaskCommand(
-    Guid UserId,
     string Name,
     string? Description,
     DateOnly Date,

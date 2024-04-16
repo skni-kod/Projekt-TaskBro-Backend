@@ -23,7 +23,7 @@ public class TaskRepository : ITaskRepository
 
     /* public async Task<List<GetDailyTaskDto>> GetTasks(Guid userId)
      {
-         var result = await _context.Tasks.Where(x => x.UserId == userId).ToListAsync();
+         var result = await _context.Tasks.Where(x => x.GetUserId == userId).ToListAsync();
          if (result == null) return null;
          var resulAsDto = result.Select(x => new GetDailyTaskDto(x.Name, x.Description, x.Date, x.Progress, x.Priority))
              .ToList();
@@ -31,11 +31,11 @@ public class TaskRepository : ITaskRepository
      }
      */
 
-    public async Task<List<GetDailyTaskDto>> GetTasks()
+    public async Task<List<GetDailyTaskDto>> GetTasks(Guid UserId)
     {
-        var result = await _context.Tasks.ToListAsync();
+        var result = await _context.Tasks.Where(x => x.UserId == UserId).ToListAsync();
         if (result == null) return null;
-        var resulAsDto = result.Select(x => new GetDailyTaskDto(x.Name, x.Description, x.Date, x.Progress, x.Priority)).ToList();
+        var resulAsDto = result.Select(x => new GetDailyTaskDto(x.Id,x.Name, x.Description, x.Date, x.Progress, x.Priority,x.UserId)).ToList();
         return resulAsDto;
     }
 }

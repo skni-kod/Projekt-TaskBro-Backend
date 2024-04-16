@@ -54,7 +54,7 @@ namespace Infrastructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Tasks_UserId",
                 table: "Tasks",
-                column: "UserId");
+                column: "GetUserId");
         }
 
         /// <inheritdoc />

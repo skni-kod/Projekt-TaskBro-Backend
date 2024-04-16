@@ -15,9 +15,8 @@ public class AddTaskHandler:IRequestHandler<AddTaskCommand,AddTaskResponse>
     }
     public async Task<AddTaskResponse> Handle(AddTaskCommand request, CancellationToken cancellationToken)
     {
-        var id = new Guid();
-        var newTask = new Domain.Entities.DailyTask(request.Name,request.Description,request.Date,false,0,id);
-        await _taskRepository.AddTask(id, newTask, cancellationToken);
+        var newTask = new Domain.Entities.DailyTask(request.Name,request.Description,request.Date,request.Progress,request.Prioryty,request.UserId);
+        await _taskRepository.AddTask(request.UserId, newTask, cancellationToken);
         return new AddTaskResponse("Dodano nowego Taska");
     }
 }

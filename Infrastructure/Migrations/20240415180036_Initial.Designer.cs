@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(TaskBroDbContext))]
-    [Migration("20240327164947_RefreshTokenMigration")]
-    partial class RefreshTokenMigration
+    [Migration("20240415180036_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,18 +35,17 @@ namespace Infrastructure.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Priority")
+                    b.Property<int?>("Priority")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Progress")
-                        .HasColumnType("integer");
+                    b.Property<bool?>("Progress")
+                        .HasColumnType("boolean");
 
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uuid");

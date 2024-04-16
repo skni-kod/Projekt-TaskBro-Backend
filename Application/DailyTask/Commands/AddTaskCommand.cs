@@ -6,7 +6,7 @@ namespace Application.DailyTask.Commands;
 public record AddTaskCommand(
     Guid UserId,
     string Name,
-    string Description,
+    string? Description,
     DateOnly Date,
-    bool Progress,
-    int Prioryty) : IRequest<AddTaskResponse>;
+    bool? Progress,
+    int? Prioryty) : IRequest<AddTaskResponse>;

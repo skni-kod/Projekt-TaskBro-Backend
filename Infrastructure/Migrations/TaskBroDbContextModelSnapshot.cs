@@ -44,12 +44,12 @@ namespace Infrastructure.Migrations
                     b.Property<bool?>("Progress")
                         .HasColumnType("boolean");
 
-                    b.Property<Guid?>("GetUserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("GetUserId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Tasks");
                 });
@@ -95,7 +95,9 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("Domain.Entities.User", "User")
                         .WithMany()
-                        .HasForeignKey("GetUserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });

@@ -23,3 +23,16 @@ C:\Users\jakub\Desktop\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Pre
 C:\Users\jakub\Desktop\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\refint\Presentation.dll
 C:\Users\jakub\Desktop\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Presentation.pdb
 C:\Users\jakub\Desktop\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\ref\Presentation.dll
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\bin\Debug\net7.0\Presentation.deps.json
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\bin\Debug\net7.0\Presentation.dll
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\bin\Debug\net7.0\Presentation.pdb
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Presentation.csproj.AssemblyReference.cache
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Presentation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Presentation.AssemblyInfoInputs.cache
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Presentation.AssemblyInfo.cs
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Presentation.sourcelink.json
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Presentation.dll
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\refint\Presentation.dll
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\Presentation.pdb
+C:\Users\sebcw\Documents\GitHub\Task\Projekt-TaskBro-Backend\Presentation\obj\Debug\net7.0\ref\Presentation.dll

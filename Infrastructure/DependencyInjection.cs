@@ -2,10 +2,14 @@ using System.Reflection.Metadata;
 using System.Text;
 using Application.Account.Commands.RefreshToken;
 using Application.Persistance.Interfaces.AccountInterfaces;
+using Application.Persistance.Interfaces.ClaimUserId;
+using Application.Persistance.Interfaces.DailyTaskInterface;
 using FluentValidation;
 using Infrastructure.Authentication;
 using Infrastructure.Persistance;
+using Infrastructure.Persistance.Repositories;
 using Infrastructure.Persistance.Repositories.AccountRepositories;
+using Infrastructure.Persistance.Repositories.TaskRepositoriers;
 using Infrastructure.Persistance.Seeders;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +26,8 @@ public static class DependencyInjection
         services.AddScoped<IAccountRepository, AccountRepository>();
         services.AddScoped<Seeder>();
         services.AddHttpContextAccessor();
+        services.AddScoped<ITaskRepository, TaskRepository>();
+        services.AddScoped<IGetUserId, GetUserId>();
         services.AddValidatorsFromAssemblyContaining<RefreshTokenCommand>();
         
         return services;

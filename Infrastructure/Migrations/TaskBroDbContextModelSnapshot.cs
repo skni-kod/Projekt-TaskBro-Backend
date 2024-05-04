@@ -32,20 +32,19 @@ namespace Infrastructure.Migrations
                         .HasColumnType("date");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Priority")
+                    b.Property<int?>("Priority")
                         .HasColumnType("integer");
 
-                    b.Property<int>("Progress")
-                        .HasColumnType("integer");
+                    b.Property<bool?>("Progress")
+                        .HasColumnType("boolean");
 
-                    b.Property<Guid?>("UserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id");
@@ -96,7 +95,9 @@ namespace Infrastructure.Migrations
                 {
                     b.HasOne("Domain.Entities.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });

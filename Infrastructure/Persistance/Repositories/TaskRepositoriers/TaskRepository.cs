@@ -38,4 +38,17 @@ public class TaskRepository : ITaskRepository
         var resulAsDto = result.Select(x => new GetDailyTaskDto(x.Id,x.Name, x.Description, x.Date, x.Progress, x.Priority,x.UserId)).ToList();
         return resulAsDto;
     }
+
+    public async Task<bool> DeleteTask(Guid UserId, Guid TaskId,CancellationToken cancellationToken)
+    {
+        var result = await _context.Tasks.FindAsync(TaskId,cancellationToken);
+        if (result.UserId != UserId)
+        {
+            return false;
+        }
+
+        _context.Tasks.Remove(result);
+        await _context.SaveChangesAsync(cancellationToken);
+        return true;
+    }
 }

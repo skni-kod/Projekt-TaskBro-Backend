@@ -9,4 +9,5 @@ public interface ITaskRepository
     // Task<List<GetDailyTaskDto>> GetTasks(Guid userId);
     Task<List<GetDailyTaskDto>> GetTasks(Guid UserId);
     Task<bool> DeleteTask(Guid UserId, Guid TaskId,CancellationToken cancellationToken);
+    Task<bool> UpdateTask(Guid UserId, Guid TaskId, UpdateTaskDto update, CancellationToken cancellationToken);
 }

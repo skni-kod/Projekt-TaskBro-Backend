@@ -1,5 +1,6 @@
 using Application.DailyTask.Commands;
 using Application.DailyTask.Commands.DeleteTask;
+using Application.DailyTask.Commands.UpdateTask;
 using Application.DailyTask.Queries.GetTasks;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -31,6 +32,14 @@ public class TaskController: BaseController
 
     [HttpDelete("/DeleteTask")]
     public async Task<IActionResult> DeleteTask([FromBody] DeleteTaskCommand command,CancellationToken cancellationToken)
+    {
+        var response = await Mediator.Send(command, cancellationToken);
+        return Ok(response);
+    }
+
+    [HttpPut("/UpdateTask")]
+    public async Task<IActionResult> UpdateTask([FromBody] UpdateTaskCommand command,
+        CancellationToken cancellationToken)
     {
         var response = await Mediator.Send(command, cancellationToken);
         return Ok(response);

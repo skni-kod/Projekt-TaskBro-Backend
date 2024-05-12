@@ -51,4 +51,17 @@ public class TaskRepository : ITaskRepository
         await _context.SaveChangesAsync(cancellationToken);
         return true;
     }
+
+    public async Task<bool> UpdateTask(Guid UserId, Guid TaskId, UpdateTaskDto update, CancellationToken cancellationToken)
+    {
+        var task = await _context.Tasks.FindAsync(TaskId, cancellationToken);
+        if (task is null || task.UserId != UserId) return false;
+        task.Name = update.Name;
+        task.Description = update.Description;
+        task.Date = update.Date;
+        task.Progress = update.Progress;
+        task.Priority = update.Priority;
+        await _context.SaveChangesAsync(cancellationToken);
+        return true;
+    }
 }
